@@ -1,8 +1,7 @@
 \documentclass[
 	12pt,
 	twoside,
-	openright,
-	doublespacing
+	openright
 ]{report}
 
 \usepackage{style/aas_macros}
@@ -214,9 +213,7 @@
 }
 
 \newcommand{\quoteit}[1]{
-	\begin{singlespacing}
 	\begin{displayquote}\textsl{``#1''}\end{displayquote}
-	\end{singlespacing}
 }
 
 \graphicspath{{figures/}{./}}
@@ -226,13 +223,13 @@
 	justification=justified,
 	}
 
-%\doublespacing
-
 \newcommand{\red}[1]{{\color{red}#1}}
-\newcommand{\todo}[1]{{\color{blue}todo: #1}}
+\newcommand{\todo}[1]{{\color{blue}TODO: #1}}
 
 \AtBeginDocument{
 	\hypersetup{pdftitle=\thesistitle}
 	\hypersetup{pdfauthor=\authorname}
 }
+
+\doublespacing
 
