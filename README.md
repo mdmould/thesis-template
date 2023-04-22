@@ -2,7 +2,7 @@
 
 Minimal but nicely styled thesis template.
 
-The PDF is compiled on commits and is available at [https://github.com/mdmould/thesis-template/blob/build/main.pdf](https://github.com/mdmould/thesis-template/blob/build/main.pdf).
+The PDF is compiled on commits and is available at [https://github.com/mdmould/thesis-template/blob/build/main.pdf](https://github.com/mdmould/thesis-template/blob/build/main.pdf). This is the fail `./main.pdf` in the `build` branch. Change the GitHub username to yours in the URL.
 
 You should edit `frontmatter/info.tex` and the other frontmatter pages in `frontmatter/`, which you can choose to make appear or not in `main.tex`.
 
