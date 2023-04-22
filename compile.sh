@@ -1,3 +1,4 @@
+#!/bin/sh
 pdflatex -synctex=1 -interaction=nonstopmode main.tex
 bibtex main
 pdflatex -synctex=1 -interaction=nonstopmode main.tex
