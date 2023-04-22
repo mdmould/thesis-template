@@ -1,21 +1,17 @@
+name: Build LaTeX document
 on: [push]
 jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: Compile LaTeX document
-        uses: xu-cheng/texlive-action/full@v1
+        uses: dante-ev/latex-action@latest
         with:
-          run: |
-            pdflatex -synctex=1 -interaction=nonstopmode main.tex
-            bibtex main
-            pdflatex -synctex=1 -interaction=nonstopmode main.tex
-            pdflatex -synctex=1 -interaction=nonstopmode main.tex
+          entrypoint: ./compile.sh
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: main.pdf
-            
+          path: ./main.pdf
