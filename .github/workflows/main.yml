@@ -10,19 +10,11 @@ jobs:
         uses: dante-ev/latex-action@latest
         with:
           entrypoint: ./compile.sh
-      - name: Move
-        run: mkdir -p build && mv ./main.pdf ./build/
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
           name: build
-          path: ./build
-  deploy:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+          path: ./main.pdf
       - name: Download
         uses: actions/download-artifact@v3
         with:
