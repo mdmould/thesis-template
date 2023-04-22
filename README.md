@@ -2,15 +2,18 @@
 
 Minimal but nicely styled thesis template.
 
+The PDF is compiled on commits and is available at [https://github.com/mdmould/thesis-template/blob/build/main.pdf](https://github.com/mdmould/thesis-template/blob/build/main.pdf).
+
 You should edit `frontmatter/info.tex` and the other frontmatter pages in `frontmatter/`, which you can choose to make appear or not in `main.tex`.
 
-Files in `style/` should not be edited.
-
-Chapter and appendix templates are located in `chapters/` and you should add `.tex` files for each.
+Chapter and appendix templates are located in `chapters/`. Add `.tex` files for each chapter and appendix and add them to `chapters/`, making sure to `\include{chapters/filename}` in `main.tex`.
 
 Add your figures in `figures/`, with a folder for each chapter if you like.
 
 Add all your references to `main.bib`.
 
-Compile the PDF with `compile.sh` and remove the excess build files with `clean.sh`, which will keep the final `main.pdf`.
+Files in `style/` should not be edited unless you want to edit the thesis style more deeply.
 
+There are two colour macros pre-defined that you can use to highlight text while editing: `\todo{...}` (blue) and `\red{...}` (red).
+
+Compile the PDF locally with `compile.sh` and remove the excess build files with `clean.sh`, which will keep the final `main.pdf`.
