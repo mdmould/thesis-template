@@ -2,6 +2,7 @@
 	12pt,
 	twoside,
 	openright,
+	doublespacing
 ]{report}
 
 \usepackage{style/aas_macros}
@@ -11,7 +12,7 @@
 \usepackage{setspace}
 \usepackage{emptypage}
 \usepackage[svgnames]{xcolor}
-\usepackage{hyperref}
+\usepackage[unicode]{hyperref}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
 \usepackage{tcolorbox}
@@ -25,6 +26,7 @@
 \usepackage{mathtools}
 \usepackage{physics}
 \usepackage[autostyle=true]{csquotes}
+\usepackage[all]{hypcap}
 
 \newdateformat
 	{monthyear}
@@ -115,6 +117,14 @@
 			}
 	}
 
+\fancypagestyle{bib}
+	{%
+		\fancyhf{}
+		\renewcommand{\headrulewidth}{2pt}
+		\fancyhead[RO,LE]{\thepage}
+		\fancyhead[RE,LO]{\textbf{Bibliography}}
+	}
+
 \pagestyle{main}
 \renewcommand{\chaptermark}[1]
 	{\markboth{#1}{}}
@@ -182,29 +192,6 @@
 	#1
 }
 
-\newcommand{\quoteit}[1]{
-	\begin{singlespacing}
-	\begin{displayquote}\textsl{``#1''}\end{displayquote}
-	\end{singlespacing}
-}
-
-%\graphicspath{{figures/}}
-
-\captionsetup{
-	labelfont=bf,
-	justification=justified,
-	}
-
-\newcommand{\bib}[1][main]{
-	\addchtotoc{\textbf{Bibliography}}
-	\bibliographystyle{style/apsrev4-2-modified}
-	\begin{singlespacing}
-	\bibliography{#1}
-	\end{singlespacing}
-}
-
-\doublespacing
-
 \newcommand{\frontmatter}{
 	\pagestyle{plain}
 	\pagenumbering{roman}
@@ -217,6 +204,30 @@
 	\setcounter{page}{0}
 }
 
+\newcommand{\bib}[1][main]{
+	\pagestyle{bib}
+	\addchtotoc{\textbf{Bibliography}}
+	\bibliographystyle{style/apsrev4-2-modified}
+	\begin{singlespacing}
+	\bibliography{#1}
+	\end{singlespacing}
+}
+
+\newcommand{\quoteit}[1]{
+	\begin{singlespacing}
+	\begin{displayquote}\textsl{``#1''}\end{displayquote}
+	\end{singlespacing}
+}
+
+\graphicspath{{figures/}{./}}
+
+\captionsetup{
+	labelfont=bf,
+	justification=justified,
+	}
+
+%\doublespacing
+
 \newcommand{\red}[1]{{\color{red}#1}}
 \newcommand{\todo}[1]{{\color{blue}todo: #1}}
 
@@ -224,3 +235,4 @@
 	\hypersetup{pdftitle=\thesistitle}
 	\hypersetup{pdfauthor=\authorname}
 }
+
