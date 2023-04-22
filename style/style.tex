@@ -168,13 +168,15 @@
 }
 
 \renewcommand{\abstract}[1]{
-	\addsectotoc{Abstract}
+	\phantomsection
 	\abstractbox{#1}
+	\addsectotoc{Abstract}
 }
 
 \newcommand{\summary}[1]{
-	\addsectotoc{Summary}
+	\phantomsection
 	\section*{Summary}
+	\addsectotoc{Summary}
 	#1
 }
 
