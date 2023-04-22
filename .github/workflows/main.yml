@@ -10,11 +10,13 @@ jobs:
         uses: dante-ev/latex-action@latest
         with:
           entrypoint: ./compile.sh
+      - name: Move
+        run: mkdir -p build && mv ./main.pdf ./build/
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
-          name: main
-          path: main.pdf
+          name: build
+          path: ./build
   deploy:
     needs: [build]
     runs-on: ubuntu-latest
@@ -24,10 +26,10 @@ jobs:
       - name: Download
         uses: actions/download-artifact@v3
         with:
-          path: main.pdf
+          path: ./build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./main.pdf
+          publish_dir: ./build
           publish_branch: build
