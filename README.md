@@ -1,6 +1,6 @@
 # thesis-template
 
-Minimal but nicely styled. thesis template
+Minimal but nicely styled thesis template.
 
 You should edit `frontmatter/info.tex` and the other frontmatter pages in `frontmatter/`, which you can choose to make appear or not in `main.tex`.
 
