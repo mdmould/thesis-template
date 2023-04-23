@@ -1,4 +1,6 @@
 main.pdf
+*.bib.save.tmp
+*.bib.bak
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
