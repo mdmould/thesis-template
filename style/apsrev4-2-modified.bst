@@ -1329,13 +1329,13 @@ FUNCTION {format.eprint.controlled}
         archive duplicate$ empty$ { pop$ archiv.base } 'skip$ if$ *
         "/" *
         swap$ *
-        "{" swap$ * "} " *
+        "{" swap$ * "}" *
       swap$
       ""
         archivePrefix duplicate$ empty$ { pop$ "" } { ":" * } if$ *
         swap$ *
         primaryClass  duplicate$ empty$ { pop$ "" } { " [" swap$ * "]" * } if$ *
-        "{" swap$ * "} " *
+        "{" swap$ * "}" *
       *
       eprint.command swap$ *
     }
@@ -1352,13 +1352,13 @@ FUNCTION {format.eprint}
         archive duplicate$ empty$ { pop$ archiv.base } 'skip$ if$ *
         "/" *
         swap$ *
-        "{" swap$ * "} " *
+        "{" swap$ * "}" *
       swap$
       ""
         archivePrefix duplicate$ empty$ { pop$ "" } { ":" * } if$ *
         swap$ *
         primaryClass  duplicate$ empty$ { pop$ "" } { " [" swap$ * "]" * } if$ *
-        "{" swap$ * "} " *
+        "{" swap$ * "}" *
       *
       eprint.command swap$ *
     }
